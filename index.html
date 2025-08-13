@@ -1,54 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Bio</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — dev & stuff</title>
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <main class="wrap" role="main" aria-labelledby="page-title">
+    <div class="card" id="card">
+      <header class="header">
+        <h1 id="page-title">your name<span class="handle"> — @yourhandle</span></h1>
+        <p class="tagline">i'm a <span id="typed"></span></p>
+      </header>
 
-  <section id="about">
-    <h1>Your Name</h1>
-    <p>Short bio about yourself. What do you do? What are your interests?</p>
-  </section>
+      <section class="section about">
+        <h2>about</h2>
+        <p class="muted">
+          short, punchy intro about you. what you build, what you enjoy, and one small human detail (like: “coffee-fueled dev, likes cozy vr evenings”).
+        </p>
+      </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML & CSS</li>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </section>
+      <section class="grid">
+        <div class="card-item">
+          <h3>what i do</h3>
+          <ul>
+            <li>languages: javascript, c#, python (example)</li>
+            <li>focus: vr, game mechanics, small tools</li>
+            <li>tools: unity, github, blender</li>
+          </ul>
+        </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Project 1</h3>
-      <p>Brief description of your project.</p>
-      <a href="https://github.com/yourusername/project1" target="_blank">View Project</a>
+        <div class="card-item">
+          <h3>projects</h3>
+          <ul>
+            <!-- replace with anchors to your repos / pages -->
+            <li><a href="#">project-one — short 1-liner</a></li>
+            <li><a href="#">project-two — short 1-liner</a></li>
+            <li><a href="#">more on github</a></li>
+          </ul>
+        </div>
+
+        <div class="card-item">
+          <h3>current</h3>
+          <p class="muted">what you're building or learning right now. (e.g., "making a cozy VR map editor / learning shader basics")</p>
+        </div>
+
+        <div class="card-item">
+          <h3>contact</h3>
+          <p class="muted">email (opt) · discord: yourname#1234 · <a href="#">portfolio</a></p>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <small class="muted">last updated: <time id="updated">—</time></small>
+      </footer>
     </div>
-  </section>
+  </main>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>hi :3</title>
+  <title>your name — long bio</title>
 
   <!-- google font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -13,55 +13,237 @@
 <body>
   <main class="wrap" role="main" aria-labelledby="page-title">
     <div class="card" id="card">
+      <!-- header / quick info -->
       <header class="header">
-        <h1 id="page-title">mae<span class="handle"> — @.catsinthecold</span></h1>
-        <p class="tagline">im a <span id="typed"></span></p>
+        <h1 id="page-title">your name <span class="handle">— @yourhandle</span></h1>
+        <p class="tagline">a little about me: <strong id="lead-line">short punchy one-liner</strong></p>
+
+        <nav class="mini-toc" aria-label="quick links" style="margin-top:10px;">
+          <small class="muted">quick links: </small>
+          <a href="#about" class="muted" style="margin-left:8px; color:var(--accent-pink); text-decoration:none">about</a>
+          <a href="#pronouns" class="muted" style="margin-left:12px; color:var(--accent-pink); text-decoration:none">pronouns</a>
+          <a href="#interests" class="muted" style="margin-left:12px; color:var(--accent-pink); text-decoration:none">interests</a>
+          <a href="#music" class="muted" style="margin-left:12px; color:var(--accent-pink); text-decoration:none">music</a>
+          <a href="#timeline" class="muted" style="margin-left:12px; color:var(--accent-pink); text-decoration:none">timeline</a>
+          <a href="#contact" class="muted" style="margin-left:12px; color:var(--accent-pink); text-decoration:none">contact</a>
+        </nav>
       </header>
 
-      <section class="section about">
-        <h2>about meeee</h2>
+      <!-- about (long) -->
+      <section id="about" class="section about">
+        <h2>about</h2>
         <p class="muted">
-          short, punchy intro about you. what you build, what you enjoy, and one small human detail (like: “coffee-fueled dev, likes cozy vr evenings”).
+          <!-- write one longer paragraph here — aim for 3–6 sentences -->
+          i'm [your name], a curious person who likes slow mornings, loud music, and making small things that feel cozy.
+          i move between hobbies a lot — lately that's been vr maps, messing with sound stuff, and low-effort baking.
+          this page is less “resume” and more “who i am,” so expect a mix of tiny embarrassments, favorites, and what i'm into.
+        </p>
+
+        <!-- optional: several short paragraphs for more detail -->
+        <p class="muted" style="margin-top:10px;">
+          background: grew up [city/country], moved around a little, and currently based in [city — or remote]. i pick up things fast but lose interest fast too — which makes for lots of unfinished projects and some pretty decent stories.
+        </p>
+        <p class="muted" style="margin-top:8px;">
+          how i spend my time: listening to something loud, exploring cozy vr levels, talking to my plants, and dodging adult responsibilities.
         </p>
       </section>
 
-      <section class="grid">
-        <div class="card-item">
-          <h3>what i do</h3>
-          <ul>
-            <li>languages: c#, python, teeny tiny bit of js, and html</li>
-            <li>focus: NOTHING,,, i just make small tools for everyday use and uhh keep them to myself :p</li>
-            <li>tools: unity, scratch, (barely) github, etc etc (cant think of any others rn)</li>
-          </ul>
+      <!-- pronouns & identity -->
+      <section id="pronouns" class="section">
+        <h2>pronouns & identity</h2>
+
+        <div style="display:flex;gap:14px;flex-wrap:wrap;">
+          <div class="card-item" style="flex:1 1 220px;">
+            <h3>pronouns</h3>
+            <p class="muted">they / them (online), he / him (irl) — replace with what you use</p>
+          </div>
+
+          <div class="card-item" style="flex:1 1 220px;">
+            <h3>gender / label</h3>
+            <p class="muted">femboy / nonbinary / whatever fits — short note about how you like to be addressed</p>
+          </div>
         </div>
 
-        <div class="card-item">
-          <h3>projects</h3>
-          <ul>
-            <!-- replace with anchors to your repos / pages -->
-            <li><a href="#">project one — none yet</a></li>
-            <li><a href="#">project two — still none</a></li>
-            <li><a href="#">help i dont have stuff to put here rn</a></li>
-          </ul>
-        </div>
+        <details style="margin-top:10px;">
+          <summary style="cursor:pointer; font-weight:600;">a tiny identity note</summary>
+          <p class="muted" style="margin-top:8px;">
+            if you want to add anything longer here — e.g., comfort levels when asking personal questions, how public you want conversations to be, or whether you use a different voice online — put it here. keeps inbox drama low.
+          </p>
+        </details>
+      </section>
 
-        <div class="card-item">
-          <h3>current</h3>
-          <p class="muted">working (slowly) on gorilla tag mods n stuffs</p>
-        </div>
+      <!-- interests -->
+      <section id="interests" class="section">
+        <h2>interests</h2>
 
-        <div class="card-item">
-          <h3>contact</h3>
-          <p class="muted">email: no · discord: .catsinthecold · <a href="#">portfolio</a></p>
+        <div class="grid" style="margin-top:8px;">
+          <div class="card-item">
+            <h3>music</h3>
+            <ul>
+              <li>genres: shoegaze, lo-fi, ambient, indie pop</li>
+              <li>currently obsessed: [artist / album]</li>
+              <li>listening habits: late-night playlists, vinyl whenever i can</li>
+            </ul>
+          </div>
+
+          <div class="card-item">
+            <h3>games & vr</h3>
+            <ul>
+              <li>favorites: cozy exploration, physics-based parkour, soft social worlds</li>
+              <li>ongoing: building maps / tinkering with level design</li>
+            </ul>
+          </div>
+
+          <div class="card-item">
+            <h3>creative stuff</h3>
+            <ul>
+              <li>drawing, low-fi beats, tiny pixel art</li>
+              <li>making small mods & props — nothing polished, just vibes</li>
+            </ul>
+          </div>
+
+          <div class="card-item">
+            <h3>food & rituals</h3>
+            <ul>
+              <li>comfort snack: something sweet + black coffee</li>
+              <li>ritual: late-night music dumps and journaling</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <footer class="foot">
+      <!-- music section with playlists -->
+      <section id="music" class="section">
+        <h2>playlists & songs</h2>
+
+        <p class="muted">here are a few playlists / songs i keep coming back to. replace these anchors with actual playlist links (spotify / youtube / files).</p>
+
+        <ul style="margin-top:8px;">
+          <li><a href="#" class="muted">late-night shoegaze — playlist</a></li>
+          <li><a href="#" class="muted">cozy vr vibes — playlist</a></li>
+          <li><a href="#" class="muted">single track: “my go-to chill”</a></li>
+        </ul>
+
+        <details style="margin-top:12px;">
+          <summary style="cursor:pointer; font-weight:600;">a note on sharing music</summary>
+          <p class="muted" style="margin-top:8px;">
+            if you add audio files to the repo, i can show how to embed a tiny player that starts muted (browsers are picky about autoplay). otherwise, link to playlists.
+          </p>
+        </details>
+      </section>
+
+      <!-- timeline / story -->
+      <section id="timeline" class="section">
+        <h2>timeline / highlights</h2>
+
+        <ol class="muted" style="padding-left:18px; margin-top:8px;">
+          <li><strong>200x —</strong> moved to [city], learned [thing]</li>
+          <li><strong>20xx —</strong> started exploring vr & level design</li>
+          <li><strong>recent —</strong> deep into music discovery and small creative projects</li>
+        </ol>
+
+        <details style="margin-top:10px;">
+          <summary style="cursor:pointer; font-weight:600;">full story (long)</summary>
+          <p class="muted" style="margin-top:8px;">
+            write a longer chronological story here — tell the embarrassing parts, the wins, the detours. readers who want the full thing will expand it.
+          </p>
+        </details>
+      </section>
+
+      <!-- favorites -->
+      <section id="favorites" class="section">
+        <h2>favorites</h2>
+
+        <div class="grid" style="margin-top:8px;">
+          <div class="card-item">
+            <h3>books</h3>
+            <p class="muted">a short list of favs or what you're reading now</p>
+          </div>
+          <div class="card-item">
+            <h3>films & shows</h3>
+            <p class="muted">films that stuck with you</p>
+          </div>
+          <div class="card-item">
+            <h3>artists</h3>
+            <p class="muted">musicians / creators you follow closely</p>
+          </div>
+          <div class="card-item">
+            <h3>places</h3>
+            <p class="muted">city corners, parks, whatever you go back to</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- boundaries & comfort -->
+      <section id="boundaries" class="section">
+        <h2>boundaries & comfort</h2>
+
+        <details>
+          <summary style="cursor:pointer; font-weight:600;">what i'm okay with</summary>
+          <ul class="muted" style="margin-top:8px;">
+            <li>friendly chats about music, games, and art</li>
+            <li>sharing playlists and map links</li>
+          </ul>
+        </details>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; font-weight:600;">what i'm not into</summary>
+          <ul class="muted" style="margin-top:8px;">
+            <li>deep personal digs without consent</li>
+            <li>spam / unsolicited invites</li>
+          </ul>
+        </details>
+      </section>
+
+      <!-- faq -->
+      <section id="faq" class="section">
+        <h2>faq</h2>
+
+        <details>
+          <summary style="cursor:pointer; font-weight:600;">do you take commissions / collabs?</summary>
+          <p class="muted" style="margin-top:8px;">sometimes — depends on the project, time, and my mood. best to message first.</p>
+        </details>
+
+        <details style="margin-top:8px;">
+          <summary style="cursor:pointer; font-weight:600;">how do i message you?</summary>
+          <p class="muted" style="margin-top:8px;">discord is fastest, email for longer things. see contact below.</p>
+        </details>
+      </section>
+
+      <!-- contact -->
+      <section id="contact" class="section">
+        <h2>contact</h2>
+
+        <div class="grid" style="margin-top:8px;">
+          <div class="card-item">
+            <h3>direct</h3>
+            <p class="muted">discord: yourname#1234</p>
+            <p class="muted">email: <a href="mailto:you@example.com" style="color:var(--accent-pink); text-decoration:none">you@example.com</a></p>
+          </div>
+
+          <div class="card-item">
+            <h3>links</h3>
+            <ul>
+              <li><a href="#" class="muted">portfolio / blog</a></li>
+              <li><a href="#" class="muted">instagram</a></li>
+              <li><a href="#" class="muted">soundcloud / spotify</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:10px;">if you want a neat contact form instead of listing email, i can add a simple static form that sends via an email service (netlify / formspree / formsubmit).</p>
+      </section>
+
+      <!-- footer -->
+      <footer class="foot" style="margin-top:18px;">
         <small class="muted">last updated: <time id="updated">—</time></small>
+        <small class="muted">made with ☕ and too much playlists</small>
       </footer>
     </div>
   </main>
 
+  <!-- keep your script.js linked — below is a small optional snippet you can paste into it
+       to update the typed phrases so they match the non-coding focus of this page. -->
   <script src="script.js"></script>
 </body>
 </html>

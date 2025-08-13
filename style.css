@@ -14,7 +14,48 @@
   --max-width: 920px;
   --gap: 18px;
   --text: #e9eef8;
+
+  /* gradient text colors */
+  --gradient-1: var(--accent-pink);
+  --gradient-2: #b292ff;   /* soft violet */
+  --gradient-3: #7fd4ff;   /* soft cyan */
+  --gradient-speed: 6s;    /* animation speed */
 }
+
+/* gradient text (inspired by reactbits style, adapted) */
+.gradient-text {
+  display: inline-block;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--gradient-1) 0%, var(--gradient-2) 48%, var(--gradient-3) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateZ(0);
+  will-change: background-position;
+  animation: gradient-text-slide var(--gradient-speed) linear infinite;
+}
+
+/* fallback for very old browsers */
+.gradient-text:not(:where([style*="background-clip"], .gradient-text)) {
+  color: var(--accent-pink);
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text {
+    animation: none;
+    background-size: 100% 100%;
+  }
+}
+
+@keyframes gradient-text-slide {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* rest of your existing styles below */
 
 *{box-sizing:border-box}
 html,body{height:100%}

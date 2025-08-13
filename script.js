@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // personal / bio-style phrases (edit as you like)
   const phrases = [
-    'they / them',
-    'music nerd',
-    'cozy vr explorer',
-    'playlist hoarder',
-    'soft-level designer'
+    'i dont like people',
+    'music addict',
+    'is it weird to sleep in vr?',
+    'god i love music',
+    'honk shooo'
   ];
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

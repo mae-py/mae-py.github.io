@@ -1,13 +1,15 @@
 /* style.css
-   modern centered layout, slow animated gradient background
+   darker navy + pastel pink accents
+   replace your previous style.css with this
 */
 
 :root{
-  --bg-accent-1: #6a11cb;
-  --bg-accent-2: #2575fc;
-  --card-bg: rgba(255,255,255,0.06);
-  --card-border: rgba(255,255,255,0.08);
-  --muted: rgba(255,255,255,0.75);
+  --bg-accent-1: #071233; /* deep navy */
+  --bg-accent-2: #0f2a4d; /* slightly lighter navy */
+  --accent-pink: #f7c6d9; /* pastel pink */
+  --card-bg: rgba(6,12,24,0.62);      /* darker glass card */
+  --card-border: rgba(255,255,255,0.04);
+  --muted: rgba(255,255,255,0.82);
   --glass-radius: 16px;
   --max-width: 920px;
   --gap: 18px;
@@ -20,11 +22,14 @@ body{
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  color: white;
-  background: linear-gradient(120deg, var(--bg-accent-1), var(--bg-accent-2));
-  /* animated gradient via background-size & position */
+  color: #e9eef8; /* off-white for readability on dark bg */
+  /* subtle navy gradient with a hint of pink warmth */
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(247,198,217,0.04), transparent 8%),
+    radial-gradient(900px 500px at 95% 90%, rgba(247,198,217,0.03), transparent 8%),
+    linear-gradient(120deg, var(--bg-accent-1), var(--bg-accent-2));
   background-size: 200% 200%;
-  animation: gradientShift 28s ease infinite;
+  animation: gradientShift 36s ease infinite;
   -webkit-font-variant-ligatures: none;
 }
 
@@ -50,11 +55,11 @@ body{
   border: 1px solid var(--card-border);
   border-radius: var(--glass-radius);
   padding: 28px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-  backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 12px 40px rgba(2,6,18,0.6);
+  backdrop-filter: blur(10px) saturate(110%);
   transform: translateY(8px);
   opacity: 0;
-  transition: opacity 550ms ease, transform 550ms ease;
+  transition: opacity 500ms ease, transform 500ms ease;
 }
 
 /* when loaded, fade in */
@@ -70,13 +75,14 @@ body{
   font-size: clamp(20px, 3.3vw, 34px);
   letter-spacing: -0.02em;
   text-transform: lowercase;
+  color: #f0f6ff;
 }
 
 .handle{
-  font-weight:400;
-  color: rgba(255,255,255,0.85);
-  font-size: 0.85em;
-  margin-left:6px;
+  font-weight:600;
+  color: var(--accent-pink);
+  font-size: 0.9em;
+  margin-left:8px;
 }
 
 /* tagline / typed */
@@ -98,8 +104,9 @@ body{
   font-size: 0.95rem;
   font-weight:600;
   text-transform: lowercase;
+  color: #e9f0ff;
 }
-.muted{ color: rgba(255,255,255,0.8); font-weight:300; margin:0; }
+.muted{ color: var(--muted); font-weight:300; margin:0; }
 
 /* grid for cards */
 .grid{
@@ -112,17 +119,25 @@ body{
 .card-item{
   padding: 14px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.03);
 }
-.card-item h3{ margin:0 0 8px 0; font-size:0.95rem; font-weight:600; text-transform: lowercase; }
+.card-item h3{ margin:0 0 8px 0; font-size:0.95rem; font-weight:600; text-transform: lowercase; color: #f3f8ff; }
 .card-item ul{ margin:0; padding-left:18px; font-weight:300; color:var(--muted) }
-.card-item a{ color: white; text-decoration: none; opacity:0.95; border-bottom: 1px dashed rgba(255,255,255,0.06) }
+.card-item a{
+  color: var(--accent-pink);
+  text-decoration: none;
+  opacity:0.95;
+  border-bottom: 1px dashed rgba(247,198,217,0.06);
+}
 .card-item a:hover{ opacity:1; text-decoration: none; }
+
+/* subtle pink accent for small UI bits */
+.header h1 .accent, .card-item .accent { color: var(--accent-pink); }
 
 /* footer */
 .foot{ display:flex; justify-content:space-between; align-items:center; margin-top:16px; gap:8px; }
-.foot small{ color: rgba(255,255,255,0.85); }
+.foot small{ color: rgba(233,240,255,0.85); }
 
 /* small responsive tweaks */
 @media (max-width:540px){

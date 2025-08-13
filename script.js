@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // typed words - change to whatever fits you
   const phrases = [
     'vr dev',
-    'game mechanics',
-    'tools & tinkering',
-    'shader curious',
-    'cozy-level designer'
+    'pc dev',
+    'sleeper',
+    'music addict',
+    'ramen noodle addict :fire:'
   ];
 
   const typedEl = document.getElementById('typed');

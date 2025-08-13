@@ -1,6 +1,6 @@
 /* style.css
    darker navy + pastel pink accents
-   replace your previous style.css with this
+   merged with canvas & performance-friendly gradient layer
 */
 
 :root{
@@ -13,6 +13,7 @@
   --glass-radius: 16px;
   --max-width: 920px;
   --gap: 18px;
+  --text: #e9eef8;
 }
 
 *{box-sizing:border-box}
@@ -22,20 +23,46 @@ body{
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  color: #e9eef8; /* off-white for readability on dark bg */
-  /* subtle navy gradient with a hint of pink warmth */
+  color: var(--text);
+  background: var(--bg-accent-1); /* fallback in case ::before fails */
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-variant-ligatures: none;
+}
+
+/* gpu-friendly animated layer instead of animating background-position */
+body::before{
+  content: "";
+  position: fixed;
+  inset: -30%;
+  z-index: -2;
   background:
     radial-gradient(1200px 600px at 10% 10%, rgba(247,198,217,0.04), transparent 8%),
     radial-gradient(900px 500px at 95% 90%, rgba(247,198,217,0.03), transparent 8%),
     linear-gradient(120deg, var(--bg-accent-1), var(--bg-accent-2));
-  background-size: 200% 200%;
-  animation: gradientShift 36s ease infinite;
-  -webkit-font-variant-ligatures: none;
+  background-size: cover;
+  will-change: transform;
+  transform: translateX(-8%);
+  animation: gradientFloat 60s linear infinite;
+  filter: saturate(1.02);
 }
 
 /* respect reduced motion */
 @media (prefers-reduced-motion: reduce){
-  body { animation: none; background-size: cover; }
+  body::before { animation: none; transform: none; }
+}
+
+/* hyperspeed canvas sits behind everything but above the base gradient */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;           /* above ::before but behind content */
+  display: block;
+  pointer-events: none;  /* clicks go through */
+  will-change: transform;
+  opacity: 0.98;
 }
 
 /* center everything */
@@ -60,6 +87,8 @@ body{
   transform: translateY(8px);
   opacity: 0;
   transition: opacity 500ms ease, transform 500ms ease;
+  position: relative;
+  z-index: 1;
 }
 
 /* when loaded, fade in */
@@ -92,7 +121,7 @@ body{
   color: var(--muted);
   font-size: 1.02rem;
 }
-#typed{
+#lead-line{
   font-weight:600;
   color: #fff;
 }
@@ -139,15 +168,19 @@ body{
 .foot{ display:flex; justify-content:space-between; align-items:center; margin-top:16px; gap:8px; }
 .foot small{ color: rgba(233,240,255,0.85); }
 
-/* small responsive tweaks */
+/* small responsive tweaks and cheaper styles on small screens */
+@media (max-width:900px){
+  .card{ padding:20px; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: 0 6px 18px rgba(0,0,0,0.5); border-radius: 12px; }
+  #bg-canvas { opacity: 0.92; }
+}
+
 @media (max-width:540px){
-  .card{ padding:20px; }
   .grid{ gap:12px; }
 }
 
-/* gradient animation */
-@keyframes gradientShift {
-  0%{ background-position: 0% 50%; }
-  50%{ background-position: 100% 50%; }
-  100%{ background-position: 0% 50%; }
+/* subtle float animation for the background pseudo element */
+@keyframes gradientFloat {
+  0%   { transform: translateX(-8%) translateY(0); }
+  50%  { transform: translateX(8%) translateY(-2%); }
+  100% { transform: translateX(-8%) translateY(0); }
 }
